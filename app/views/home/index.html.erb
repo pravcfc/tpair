@@ -11,6 +11,15 @@
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     map = new google.maps.Map(mapCanvas, mapOptions);
+
+    $('.location-parent').each(function(){
+      var x = $(this).find('.x-field').text();
+      var y = $(this).find('.y-field').text();
+      var z = $(this).find('.z-field').text();
+      var current = new google.maps.LatLng(x, y);
+      console.log(current);
+      addMarker(current); 
+  });
     google.maps.event.addListener(map,'click', function(event) {
       placeMarker(event.latLng);
     });
@@ -40,14 +49,7 @@
     $("#z-field").val("15");
   }
 
-  $('.location-parent').each(function(){
-      var x = $(this).find('.x-field').text();
-      var y = $(this).find('.y-field').text();
-      var z = $(this).find('.z-field').text();
-      var current = new google.maps.LatLng(x, y);
-      console.log(current);
-      addMarker(current); 
-  });
+  
 </script>
 
 <div class="location table" style="display:none;">
