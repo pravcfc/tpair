@@ -1,0 +1,8 @@
+<br><br><br>
+<div class="location table">
+<%current_user.locations.each do |location|%>
+ <div class="location-parent">
+  <%= location.x %> | <%= location.y %> |
+ </div>
+<% end %>
+</div>
