@@ -14,9 +14,6 @@
             <li class="active"><%= link_to 'Home', root_path %></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
-            <% if current_user.present? %>
-            <li><%= link_to 'Places', places_path %></li>
-            <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
           <% if current_user.nil? %>
